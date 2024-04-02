@@ -10,7 +10,8 @@ document.addEventListener("submit", async () => {
     Humidity: ${body.current.humidity}\n Day 1 ${body.forecast.forecastday[0].day.avgtemp_f}\n Day 2 ${body.forecast.forecastday[1].day.avgtemp_f}
     Day 3 ${body.forecast.forecastday[2].day.avgtemp_f}\n Day 4 ${body.forecast.forecastday[3].day.avgtemp_f}\n Day 5 ${body.forecast.forecastday[4].day.avgtemp_f}`
    
-    imgElement.src = body.current.condition.icon
+    imgElement.src = `https:${body.current.condition.icon}`
+    console.log(imgElement)
     form.insertAdjacentElement("afterend", pElement)
     form.insertAdjacentElement("afterend", imgElement)
     } catch(err)
